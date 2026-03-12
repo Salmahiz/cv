@@ -5,9 +5,11 @@ import {defineConfig, loadEnv} from 'vite';
 
 export default defineConfig(({mode}) => {
   const env = loadEnv(mode, '.', '');
+  const isProd = mode === 'production';
+
   return {
-    // Note: If deploying to GitHub Pages, you may need to set 'base' to your repo name
-    // e.g., base: '/my-repo-name/',
+    // Set base to repo name for GitHub Pages production builds
+    base: isProd ? '/cv/' : '/',
     plugins: [react(), tailwindcss()],
     define: {
       'process.env.GEMINI_API_KEY': JSON.stringify(env.GEMINI_API_KEY),
