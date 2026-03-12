@@ -36,12 +36,11 @@ const Card = ({ children, className = "", ...props }: { children: React.ReactNod
 
 export default function App() {
   return (
-    <div className="min-h-screen selection:bg-accent/30 selection:text-accent">
+    <div className="min-h-screen selection:bg-accent/30 selection:text-accent bg-bg text-zinc-300">
       {/* Background elements */}
       <div className="fixed inset-0 -z-10 overflow-hidden">
         <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-accent/5 blur-[120px] rounded-full" />
         <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-blue-500/5 blur-[120px] rounded-full" />
-        <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 brightness-50 contrast-150" />
       </div>
 
       <div className="max-w-5xl mx-auto px-6 py-12 lg:py-24">
@@ -60,7 +59,7 @@ export default function App() {
               AVAILABLE FOR INTERNSHIPS
             </div>
             
-            <h1 className="text-5xl lg:text-7xl font-bold mb-6 tracking-tighter">
+            <h1 className="text-5xl lg:text-7xl font-bold mb-6 tracking-tighter text-white">
               {CV_DATA.name}
             </h1>
             <p className="text-xl lg:text-2xl text-zinc-400 max-w-2xl mb-8 leading-relaxed">
@@ -256,13 +255,13 @@ export default function App() {
 
             {/* Footer / Contact CTA */}
             <Card className="mt-12 bg-accent/5 border-accent/20">
-              <h3 className="text-lg font-medium mb-4">Let's connect</h3>
+              <h3 className="text-lg font-medium mb-4 text-white">Let's connect</h3>
               <p className="text-sm text-zinc-400 mb-6">
                 I'm always looking for new challenges in graphics programming and low-level development.
               </p>
               <a 
                 href={`mailto:${CV_DATA.contact.email}`}
-                className="flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-accent text-bg font-semibold hover:opacity-90 transition-opacity"
+                className="flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-accent text-black font-semibold hover:opacity-90 transition-opacity"
               >
                 <Mail className="w-4 h-4" /> Send Email
               </a>
